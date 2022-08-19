@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace MyWork
 {
@@ -358,7 +359,43 @@ namespace MyWork
             }
 
         }
+
+       
+
     }
+    class freqstring
+    {
+        static void Main(string[] args)
+        {
+            string st = "India is my country";
+            char[] ch = st.ToCharArray();
+
+            for (int i = 0; i < ch.Length; i++)
+            {
+                int count = 1;
+                bool isvisited = false;
+                for (int k= i-1; k>=0; k--)
+                {
+                    if(ch[k]==ch[i])
+                    {
+                        isvisited = true;
+                        break;
+                    }
+                }
+                if(isvisited==false)
+                {
+                    for (int j = i+1; j< ch.Length; j++)
+                    {
+                        if (ch[i] == ch[j])
+                        {
+                            count++;
+                        }
+                    }
+                    Console.WriteLine(ch[i] + " " + count);
+                }
+            }
+        }
+    } 
 
 
     //Palindrome string
@@ -384,4 +421,372 @@ namespace MyWork
                 Console.WriteLine("Not palindrome");
         }
     }
+
+    // calculate a raised to b
+
+    class AraisedB
+    {
+        static void Main(string[] args)
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int ans=1;
+            for(int i=1;i<=b;i++)
+            {
+                ans = ans * a;
+            }
+            Console.WriteLine(ans);
+        }
+
+    }
+
+    class abcd
+    {
+        int a=5;
+
+        public abcd()
+        {
+           int a= 10;
+            Console.WriteLine(a);
+        }
+
+       
+
+        static void Main(string[] args)
+        {
+            abcd s = new abcd();
+            Console.WriteLine(s.a);
+        }
+    }
+
+    //Increasing, decreasing or bouncy
+
+    class idb
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            bool flag_increasing = false;
+            bool flag_decreasing = false;
+
+
+            while (n/10!=0)
+            {
+                int last = n % 10;
+                int temp = n / 10;
+                int slast = temp % 10;
+                if ((flag_decreasing == false) && (last > slast))
+                {
+                    
+                    flag_increasing = true;
+                }
+                else if ((flag_increasing == false)&& (last < slast))
+                {
+                    
+                    flag_decreasing = true;
+                }
+                else
+                {
+                    
+                    flag_increasing = false;
+                    flag_decreasing = false;
+                }
+                n = n / 10;
+            }
+               
+            if(flag_increasing == true)
+            {
+                Console.WriteLine("Increasing");
+            }
+            else if (flag_decreasing == true)
+            {
+                Console.WriteLine("Decreasing");
+            }
+            else
+            {
+                Console.WriteLine("Bouncy");
+            }
+        }
+    }
+
+    //multiplication without using * operator
+
+    class WithoutMult
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter first number");
+            int n1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter second number");
+            int n2 = int.Parse(Console.ReadLine());
+            int temp = n1;
+
+            for(int i=1;i<n2;i++)
+            {
+                n1 = n1 + temp;
+            }
+            Console.WriteLine("Multiplication: "+n1);
+        }
+    }
+
+    //Division without / operator
+
+    class WithoutDiv
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter first number");
+            int n1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter second number");
+            int n2 = int.Parse(Console.ReadLine());
+            int Quotient=0;
+
+            while (n1>=n2)
+            {
+                n1 = n1 - n2;
+                Quotient++;
+            }
+            Console.WriteLine("Multiplication: " + Quotient);
+        }
+    }
+
+    //Convert Binary to decimal
+
+    class BD
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int count = 0;
+            int i = 0;
+            double sum=0;
+            while(n!=0)
+            {
+                int last = n % 10;
+               
+                    count++;
+                    double power = Math.Pow(2, i);
+
+                    double result = last * power;
+                    sum = sum + result;
+                    n = n / 10;
+                    i++;
+               
+            }
+            Console.WriteLine(sum);
+            
+        }
+    }
+    /*
+    1
+    12
+    333
+    1234
+    55555
+     */
+    class pattern_s
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    if (i % 2 == 0)
+                        Console.Write(j);
+                    else
+                        Console.Write(i);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
+    }
+
+    /*
+    10101
+    0101
+    101
+    0101
+    10101
+     */
+
+    /*class NewP
+    {
+        static void Main(string[] args)
+        {
+            for (int r = 5; r >= 1; r--)
+            {
+                int p = r;
+
+                for (int c = 1; c <= r; c++)
+                {
+                    if (r % 2 == 0)
+                    {
+                        Console.Write(p % 2);
+                        p++;
+                    }
+                    else
+                        Console.Write(c % 2);
+
+                }
+                Console.WriteLine();
+            }
+
+        }
+    }*/
+
+
+    // sort the array
+    class newArray1
+    {
+        static void Main(string[] args)
+        {
+            char[] ch1 = { 'a', 'f', 'x', 'e', 'm', 'w' };
+            char tmp;
+            for (int i = 0; i < ch1.Length; i++)
+            {
+                for (int j = i + 1; j < ch1.Length; j++)
+                {
+                    if (ch1[i] > ch1[j])
+                    {
+                        tmp = ch1[i];
+                        ch1[i] = ch1[j];
+                        ch1[j] = tmp;
+                    }
+                }
+
+                Console.Write(ch1[i]);
+            }
+            Console.WriteLine();
+        }
+    }
+
+    class Ashvini
+    {
+        static void Main(string[] args)
+        {
+            string str = "Ashvini Balu sawant";
+            string[] s = str.Split(" ");
+            char[] ch1 = str.ToCharArray();
+
+
+            foreach(string ss in s)
+                Console.Write(ss+"_");
+            Console.WriteLine(".......................");
+            foreach (char c in ch1)
+            {
+                if (c==' ')
+                {
+                    Console.Write('_');
+                }
+                else
+                    Console.Write(c);
+            }
+        }
+    }
+
+    class Ashu
+    {
+        static void Main(string[] args)
+        {
+            int[] s = { 1, 2, 3, 4, 5, 8, 4, 2, 9, 4 };
+            for (int i = 0; i < s.Length; i++)
+            {
+                int count = 1;
+                bool isvisited = false;
+                for (int k = i - 1; k >= 0; k--)
+                {
+                    if (s[k] == s[i])
+                    {
+                        isvisited = true;
+                        break;
+                    }
+                }
+                if (isvisited == false)
+                {
+                    for (int j = i + 1; j < s.Length; j++)
+                    {
+                        if (s[i] == s[j])
+                        {
+                            count++;
+                        }
+                    }
+                    Console.WriteLine(s[i] + " " + count);
+                }
+            }
+        }
+    }
+
+    class Missing_Num_Array
+    {
+        static void Main(string[] args)
+        {
+            int[] s = { 1, 2, 3, 4, 5, 6, 8 };
+            int l = s.Length+1;
+           
+            int result = l*(l + 1) / 2;
+           
+            int sum = 0;
+            foreach(int r in s)
+            {
+                sum = sum + r;
+                
+            }
+            int miss_num = result - sum;
+            Console.WriteLine("Missing number is :"+ miss_num);
+        }
+    }
+
+    class Arr11
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the length of array ");
+            int n = int.Parse(Console.ReadLine());
+            int[] nums = new int[n] ;
+            int add = 0;
+            int subarrays = 0;
+            Console.WriteLine("Enter Array Elements");
+            for (int i = 0; i < nums.Length; i++)
+            {
+
+                int x = int.Parse(Console.ReadLine());
+                nums[i] = x;
+            }
+            
+            Console.WriteLine("Enter value of k");
+            int k = int.Parse(Console.ReadLine());
+           
+            for(int i=0;i<nums.Length;i++)
+            {
+
+                for (int j = i; j < nums.Length; j++)
+                {
+                    if ((add+ nums[j])<=k)
+                    {
+                        add += nums[j];
+
+                    }
+                    else
+                    {
+                        add = 0;
+                        break;
+                    }
+                    if (add==k)
+                    {
+                        subarrays++;
+                        add = 0;
+                        break;
+                    }
+                   
+                }
+
+
+            }
+            Console.WriteLine("No of possible subarrays are "+subarrays);
+        }
+    }
+
+    
 }

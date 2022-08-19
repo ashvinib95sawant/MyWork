@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	  <StartupObject>MyWork.fstring</StartupObject>
+	  <StartupObject>MyWork.SearchInt56</StartupObject>
   </PropertyGroup>
 
 </Project>

@@ -280,11 +280,11 @@ namespace MyWork
     {
         static void Main(string[] args)
         {
-            for (int r = 1; r <= 5; r++)
+            for (int r = 5; r >= 1; r--)
             {
-                for (int c = 5; c >= r; c--)
+                for (int c = 1; c <= r; c++)
                 {
-                    Console.Write(c);
+                    Console.Write(r);
 
                 }
                 Console.WriteLine();
@@ -574,7 +574,7 @@ namespace MyWork
         {
             Console.WriteLine("Enter number of lines");
             int Line = int.Parse(Console.ReadLine());
-
+                                                           
             for (int r = 1; r <= Line; r++)
             {
                 for(int sp=1;sp<=Line-r;sp++)
@@ -628,18 +628,28 @@ namespace MyWork
         }
     }
 
+   /*
+   1
+   2 3
+   4 5 6
+   7 8 9 10
+   11 12 13 14 15
+    */
     class fourty
     {
         static void Main(string[] args)
-        {
+        { int n = 1;
             for(int r=1; r<=5; r++)
             {
-                for(int c=r; c<=5;c++)
+                for(int c=1; c<=r;c++)
                 {
-                    Console.Write(c);
+                    Console.Write(n+" ");
+                    n++;
                 }
                 Console.WriteLine();
             }
         }
     }
+
+  
 }

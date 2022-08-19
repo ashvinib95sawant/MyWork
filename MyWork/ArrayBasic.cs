@@ -4,6 +4,29 @@ using System.Text;
 
 namespace MyWork
 {
+    class arrdeclaration
+    {
+        static void Main(string[] args)
+        {
+            int[] a = { 1, 2, 3, 4, 4, 4, 4, 78 };
+
+            //2nd way
+            int[] ar = new int[5] { 1, 4, 7, 8, 4 };
+
+            //3rd way
+            int[] arr = new int[4];
+            Console.WriteLine("Enter the elements");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int x= int.Parse(Console.ReadLine());
+                a[i] = x;
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(a[i]+" ");
+            }
+        }
+    }
     class SumOfEvenNum
     {
         static void Main(string[] args)
@@ -246,6 +269,47 @@ namespace MyWork
 
             }
             Console.WriteLine("sumof prime numbers= "+sum);
+
+        }
+    }
+
+    //print duplicate elements from arrays
+    class FrequencyOfElement
+    {
+        static void Main(string[] args)
+        {
+
+
+            int[] a = { 4, 1, 3, 1, 5, 1, 4 };
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                int count = 1;
+                bool isvisited = false;
+                for (int k = i - 1; k >= 0; k--)
+                {
+                    if (a[i] == a[k])
+                    {
+                        isvisited = true;
+                        break;
+                    }
+                }
+                if (isvisited == false)
+                {
+                    for (int j = i + 1; j < a.Length; j++)
+                    {
+                        if (a[i] == a[j])
+                        {
+                            count++;
+                        }
+                    }
+                    if (count > 1)
+                    {
+                        Console.WriteLine(a[i] + " " + count);
+                    }
+                }
+
+            }
 
         }
     }

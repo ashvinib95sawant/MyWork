@@ -237,6 +237,25 @@ namespace MyWork
         }
     }
 
+    class ppp
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int count = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                    count++;
+                
+            }
+            if (count==2)
+                Console.WriteLine("prime");
+            else
+                Console.WriteLine("Not prime");
+        }
+    }
+
     //12.Write a program to print table of given number.
 
     class TABLE
@@ -495,6 +514,26 @@ namespace MyWork
                 Console.Write(n + " ");
                 sum = n;
                 n = result;
+
+            }
+
+        }
+    }
+    class fibonaccii
+    {
+        static void Main()
+        {
+
+            int n1 = 0,n2=1,n3,n;
+            Console.WriteLine("Enter a number");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine(n1+" "+n2+" ");
+            for (int i = 2; i < n; ++i)
+            {
+                n3 = n1 + n2;
+                Console.Write(n3);
+                n1 = n2;
+                n2 = n3;
 
             }
 
