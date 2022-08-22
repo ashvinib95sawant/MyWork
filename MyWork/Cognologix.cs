@@ -172,4 +172,90 @@ namespace MyWork
 
         }
     }
+
+    class Title_Case
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the string");
+            string str = Console.ReadLine();
+           
+            string[] s = str.Split(" ");
+           
+            string c = "is as and to the ";
+            string[] a = c.Split(" ");
+            char[] ch1 = c.ToCharArray();
+            bool flag = false;
+           
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    if ((a[i][j] >= 65) && (a[i][j] <= 90))
+                    {
+                        flag = false;
+                        break;
+                    }
+                    
+                }
+
+                if (s[i]==a[i])
+                {
+                    flag = true;
+                }
+                
+               /* if (s[i] == "is" || s[i] == "as" || s[i] == "and" || s[i] == "to" || s[i] == "the")
+                {
+                    flag = true;
+
+                }*/
+                else
+                {
+                    for (int j = 0; j < s[i].Length; j++)
+                    {
+                        if (j==0)
+                        {
+
+                            if ((s[i][j] >= 65) && (s[i][j] <= 90))
+                            {
+                                flag = true;
+
+                            }
+                            else
+                            {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            if ((s[i][j] >= 97) && (s[i][j] <= 122))
+                            {
+                                flag = true;
+                               
+                            }
+                            else
+                            {
+                                flag = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (flag == false)
+                        break;
+                        
+                }
+            }
+            if (flag==true)
+            {
+                Console.WriteLine("Title case");
+            }
+            else
+            {
+                Console.WriteLine("not Title case");
+            }
+
+        }
+    }
 }

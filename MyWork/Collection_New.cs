@@ -195,6 +195,8 @@ namespace MyWork
                     d1.Add(ch, 1);
                 }
             }
+            foreach (KeyValuePair<char, int> kv in d1)
+                Console.WriteLine(kv.Key + "==>" + kv.Value);
         }
     }
 
