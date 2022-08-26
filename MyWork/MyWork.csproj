@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	  <StartupObject>MyWork.Changes</StartupObject>
+	  <StartupObject>MyWork.Dddd</StartupObject>
   </PropertyGroup>
 
 </Project>
