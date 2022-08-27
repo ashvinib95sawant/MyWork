@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace Advance_Traning.NewFolder
+namespace Advance_Traning.Linq
 {
     public class Product
     {
@@ -80,7 +80,27 @@ namespace Advance_Traning.NewFolder
                           orderby p.Price descending
                           select p;
 
-            foreach (Product item in result7)
+            /*foreach (Product item in result7)
+            {
+                Console.WriteLine(item);
+            }*/
+
+            var res = products.Where(p => p.Price < 2000).ToList();
+
+            var res2 = products.Where(p => p.Price > 2000).OrderBy(x => x.Name).ToList();
+
+            // retrieve single record
+
+            var res4 = products.Where(x => x.Id == 1).SingleOrDefault();
+
+            var res3 = products.Where(x => x.Price < 2500).OrderBy(x => x.Price).ToList().Take(3);
+
+
+            var res9 = products.Where(x => x.Price < 2500).OrderBy(x => x.Price).ToList().Skip(3);
+
+            var res12 = products.ToList();
+
+            foreach (Product item in res12)
             {
                 Console.WriteLine(item);
             }

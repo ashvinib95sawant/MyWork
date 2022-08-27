@@ -36,30 +36,37 @@ namespace Advance_Traning.NewFolder
               new Employee { Id = 10, Name = "Harsha", Salary = 19299, City = "Sangali" },
             };
 
+            //1. display all employees
             var result1 = from e in emp
                           select e;
 
+            //2. display employee with ascending order by name
             var result2 = from e in emp
                           orderby e.Name
                           select e;
 
+            //3.display employee whose salary is > 25000
             var result3 = from e in emp
                           where e.Salary > 25000
                           select e;
 
+            //4. display employee whos from 'Pune' City
             var result4 = from e in emp
                           where e.City.Contains("Pune")
                           select e;
 
+            //5. display employee with descending order by salary
             var result5 = from e in emp
                           orderby e.Salary descending
                           select e;
 
+           // 6.display employee whose name start with 'P'
             var result6 = from e in emp
                           where e.Name.StartsWith("P")
                           select e;
 
-            var result7 = from e in emp
+            //7.display employee whose salary is > 25000 & emp is from 'Mumbai' city
+           var result7 = from e in emp
                           where e.Salary > 25000 && e.City.Contains("Mumbai")
                           select e;
 
@@ -67,6 +74,8 @@ namespace Advance_Traning.NewFolder
             {
                 Console.WriteLine(data);
             }
+
+
         }
     }
 }

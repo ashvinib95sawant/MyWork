@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
-	  <StartupObject>Advance_Traning.NewFolder.Program1</StartupObject>
+	  <StartupObject>Advance_Traning.Program11</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
